@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_ups"
+        android:icon="@drawable/ic_ups_black_24dp"
+        android:title="UPS" />
+
+    <item
+        android:id="@+id/navigation_ugb"
+        android:icon="@drawable/ic_ugb_black_24dp"
+        android:title="UGB" />
+    <item
+        android:id="@+id/navigation_genset"
+        android:icon="@drawable/ic_local_upl_black_24dp"
+        android:title="G" />
+
+    <item
+        android:id="@+id/navigation_ulp"
+        android:icon="@drawable/ic_shopping_g_black_24dp"
+        android:title="ULP" />
+
+</menu>

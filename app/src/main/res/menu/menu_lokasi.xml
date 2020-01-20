@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ulp_panakukang"
+        android:title="ULP Panakukang"
+        />
+
+    <item
+        android:id="@+id/ulp_mattoanging"
+        android:title="ULP Mattoanging"
+        />
+    <item
+        android:id="@+id/ulp_sungguminasa"
+        android:title="ULP Sungguminasa"
+        />
+    <item
+        android:id="@+id/ulp_takalar"
+        android:title="ULP Takalar"
+        />
+    <item
+        android:id="@+id/ulp_malino"
+        android:title="ULP Malino"
+        />
+    <item
+        android:id="@+id/ulp_kalebajeng"
+        android:title="ULP Kalebajeng"
+        />
+</menu>

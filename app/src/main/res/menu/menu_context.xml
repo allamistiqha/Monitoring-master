@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_edit"
+        android:title="edit"
+        />
+
+    <item
+        android:id="@+id/action_delete"
+        android:title="delete"
+        />
+    <item
+        android:id="@+id/action_ugb"
+        android:title="booking ugb"
+        />
+    <item
+        android:id="@+id/action_ups"
+        android:title="booking ups"
+        />
+    <item
+        android:id="@+id/action_genset"
+        android:title="booking genset"
+        />
+</menu>

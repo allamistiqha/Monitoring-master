@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "368466466985",
+    "firebase_url": "https://monitoringapp-94aad.firebaseio.com",
+    "project_id": "monitoringapp-94aad",
+    "storage_bucket": "monitoringapp-94aad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368466466985:android:b19759523ce5aca0e831b8",
+        "android_client_info": {
+          "package_name": "unhas.informatics.monitoringapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368466466985-i9ts3mf6e2thil8ru24j5rtlla2ch4mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "unhas.informatics.monitoringapp",
+            "certificate_hash": "9b285cf210f9591a22b80b5600b63724a72eba9f"
+          }
+        },
+        {
+          "client_id": "368466466985-22bllcta9ndg8vrh9diinumg43jp6gh4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS29dxdJyfLNbp1MOQ4RAKM_E4Ig-Zm9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368466466985-22bllcta9ndg8vrh9diinumg43jp6gh4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

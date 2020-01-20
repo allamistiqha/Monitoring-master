@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="unhas.informatics.monitoringapp.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_tambaData"
+            android:label="Tambah Data"
+            tools:layout="@layout/fragment_tamba_data"
+            app:destination="@id/tambaData" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_ugb"
+            app:destination="@id/navigation_ugb" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_ups"
+            app:destination="@id/navigation_ups" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_genset"
+            app:destination="@id/navigation_genset" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_ups"
+        android:name="unhas.informatics.monitoringapp.ui.ups.UpsFragment"
+        android:label="UPS"
+        tools:layout="@layout/fragment_ups" >
+        <action
+            android:id="@+id/action_navigation_ups_to_navigation_ulp"
+            app:destination="@id/navigation_ulp" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_ugb"
+        android:name="unhas.informatics.monitoringapp.ui.ugb.UgbFragment"
+        android:label="UGB"
+        tools:layout="@layout/fragment_ugb" >
+        <action
+            android:id="@+id/action_navigation_ugb_to_navigation_ulp"
+            app:destination="@id/navigation_ulp" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_genset"
+        android:name="unhas.informatics.monitoringapp.ui.genset.Genset"
+        android:label="Genset"
+        tools:layout="@layout/fragment_genset" >
+        <action
+            android:id="@+id/action_navigation_genset_to_navigation_ulp"
+            app:destination="@id/navigation_ulp" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ulp"
+        android:name="unhas.informatics.monitoringapp.ui.ulp.Ulp"
+        android:label="ULP"
+        tools:layout="@layout/fragment_ulp" />
+    <fragment
+        android:id="@+id/tambaData"
+        android:name="unhas.informatics.monitoringapp.ui.home.TambaData"
+        android:label="fragment_tamba_data"
+        tools:layout="@layout/fragment_tamba_data" >
+        <action
+            android:id="@+id/action_tambaData_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>

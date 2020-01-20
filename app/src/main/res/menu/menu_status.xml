@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/belum_bermohon"
+        android:title="Belum Bermohon"
+        />
+
+    <item
+        android:id="@+id/bertanya"
+        android:title="Bertanya"
+        />
+    <item
+        android:id="@+id/belum_bermohon"
+        android:title="Bermohon"
+        />
+
+    <item
+        android:id="@+id/sudah_bayar"
+        android:title="Sudah Bayar"
+        />
+
+</menu>

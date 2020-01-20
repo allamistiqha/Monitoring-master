@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:context=".ui.ulp.Ulp">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Ulp Panakukang"
+                    android:textAlignment="center"
+                    android:textSize="20sp"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:padding="10dp"
+                    android:id="@+id/rvPanakukang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="Ulp Mattoanging"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:id="@+id/rvMattoanging"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Ulp Sungguminasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:padding="10dp"
+                    android:id="@+id/rvSungguminasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="Ulp Takalar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:padding="10dp"
+                    android:id="@+id/rvTakalar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="Ulp Malino"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:padding="10dp"
+                    android:id="@+id/rvMalino"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Ulp Kalebajeng"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:padding="10dp"
+                    android:id="@+id/rvKalebajeng"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>
