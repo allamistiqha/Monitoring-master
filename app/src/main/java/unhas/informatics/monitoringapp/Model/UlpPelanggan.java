@@ -1,9 +1,19 @@
 package unhas.informatics.monitoringapp.Model;
-import java.io.Serializable;
 
-public class Ugb implements Serializable {
-    public Ugb(){
+public class UlpPelanggan {
+    private String nama;
+    private String daya;
+    private String key;
+
+    public UlpPelanggan() {
     }
+
+    public UlpPelanggan(String nama, String daya, String key) {
+        this.nama = nama;
+        this.daya = daya;
+        this.key = key;
+    }
+
     public String getNama() {
         return nama;
     }
@@ -25,16 +35,6 @@ public class Ugb implements Serializable {
     }
 
     public void setKey(String key) {
-        this.key = key;
-    }
-
-    private String nama;
-    private String daya;
-    private String key;
-
-    public Ugb(String nama, String daya, String key) {
-        this.nama = nama;
-        this.daya = daya;
         this.key = key;
     }
 }

@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/elod"
+    android:background="#09426F"
     android:fitsSystemWindows="true"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.Login">
@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
         android:focusable="true"
@@ -23,46 +24,65 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             />
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
-            android:layout_height="72dp"
-            android:layout_marginBottom="24dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="35dp"
             android:layout_gravity="center_horizontal"
-            android:contentDescription="TODO" />
+            android:src="@drawable/od"/>
 
         <!-- Username Label -->
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="User Name or Email">
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Email">-->
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
+                android:drawableLeft="@drawable/ic_username"
+                android:drawablePadding="10dp"
                 android:id="@+id/etNama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:hint="Email"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#000"
+                android:background="@drawable/bg_rounded_primary"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                />
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <!-- Password Label -->
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password">
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Password">-->
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
+                android:layout_marginTop="10dp"
                 android:id="@+id/etPass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="10dp"
+                android:textColor="#000"
+                android:hint="Password"
+                android:paddingLeft="10dp"
+                android:background="@drawable/bg_rounded_primary"
+                android:inputType="textPassword"
+                android:layout_width="250dp"
+                android:layout_height="50dp" />
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/btn_login"
-            android:layout_width="fill_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="24dp"
-            android:padding="12dp"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:background="@drawable/bg_rounded_primary"
             android:text="Login"/>
     </LinearLayout>
 </ScrollView>

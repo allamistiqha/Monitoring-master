@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="20dp"
+    android:background="#E6E6FA"
+    android:orientation="vertical"
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -10,11 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <unhas.informatics.monitoringapp.AviLoading.AVLoadingIndicatorView
-        android:id="@+id/loadingView"
+        android:id="@+id/loadingViewUps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         app:indicatorColor="@color/primary"
         android:layout_gravity="center"
         app:indicatorName="LineScaleIndicator" />
-</androidx.appcompat.widget.LinearLayoutCompat>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:id="@+id/tambahDataUps"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="55dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:srcCompat="@drawable/ic_add_black_24dp"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

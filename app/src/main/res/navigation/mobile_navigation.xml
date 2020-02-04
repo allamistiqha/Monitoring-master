@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_genset"
             app:destination="@id/navigation_genset" />
+        <action
+            android:id="@+id/action_navigation_home_self"
+            app:destination="@id/navigation_home" />
     </fragment>
 
     <fragment
@@ -56,9 +59,22 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_ulp"
-        android:name="unhas.informatics.monitoringapp.ui.ulp.Ulp"
+        android:name="unhas.informatics.monitoringapp.ui.ulp.UlpFragment"
         android:label="ULP"
-        tools:layout="@layout/fragment_ulp" />
+        tools:layout="@layout/fragment_ulp" >
+        <action
+            android:id="@+id/action_navigation_ulp_to_navigation_genset"
+            app:destination="@id/navigation_genset" />
+        <action
+            android:id="@+id/action_navigation_ulp_to_navigation_ups"
+            app:destination="@id/navigation_ups" />
+        <action
+            android:id="@+id/action_navigation_ulp_to_navigation_ugb"
+            app:destination="@id/navigation_ugb" />
+        <action
+            android:id="@+id/action_navigation_ulp_self"
+            app:destination="@id/navigation_ulp" />
+    </fragment>
     <fragment
         android:id="@+id/tambaData"
         android:name="unhas.informatics.monitoringapp.ui.home.TambaData"

@@ -9,7 +9,7 @@ import android.view.View;
 import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-class RvClickListener implements RecyclerView.OnItemTouchListener {
+public class RvClickListener implements RecyclerView.OnItemTouchListener {
 
     private static final String TAG = "RecyclerTouchListener";
 
@@ -26,8 +26,8 @@ class RvClickListener implements RecyclerView.OnItemTouchListener {
         public void onClick(View view, int position);
     }
 
-    RvClickListener(Context context, final RecyclerView recyclerView,
-                    OnTouchActionListener onTouchActionListener){
+    public RvClickListener(Context context, final RecyclerView recyclerView,
+                           OnTouchActionListener onTouchActionListener){
 
         mOnTouchActionListener = onTouchActionListener;
         mGestureDetector = new GestureDetectorCompat(context,new GestureDetector.SimpleOnGestureListener(){

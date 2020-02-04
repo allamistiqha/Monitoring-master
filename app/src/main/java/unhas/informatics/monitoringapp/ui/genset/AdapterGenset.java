@@ -1,20 +1,17 @@
 package unhas.informatics.monitoringapp.ui.genset;
 
-import android.graphics.Color;
+import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import java.util.List;
-
 import unhas.informatics.monitoringapp.Model.Barang;
 import unhas.informatics.monitoringapp.Preference.SharedPrefManager;
 import unhas.informatics.monitoringapp.R;
@@ -58,19 +55,131 @@ public class AdapterGenset extends RecyclerView.Adapter<AdapterGenset.BindGenset
             nama.setText(barang.getNama());
             daya.setText(barang.getDaya());
 
-            ly.setOnClickListener(v -> {
-
-            });
-            if (SharedPrefManager.getRegisteredStatus(itemView.getContext()).equals("admin")) {
+            if (SharedPrefManager.getRegisteredStatus(itemView.getContext()).equals("Admin")) {
                 ly.setOnClickListener(v -> {
-                    ly.setBackgroundColor(Color.RED);
-                    Toast.makeText(itemView.getContext(), daya.getText().toString(), Toast.LENGTH_SHORT).show();
+                    String alamatUlp = SharedPrefManager.getUlp(itemView.getContext());
+                    if (SharedPrefManager.getStatusUlp(itemView.getContext()).equals("Ulp")){
+                        if (!SharedPrefManager.getNamepelanggan(itemView.getContext()).isEmpty()){
+                            AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
+                            builder.setTitle("Genset");
+                            builder.setMessage("Anda yakin ingin memilih : "
+                                    +barang.getNama()+" "+barang.getDaya()+"?");
+                            builder.setCancelable(false);
+                            builder.setPositiveButton("Yakin", (dialog, which) -> {
+                                Toast.makeText(itemView.getContext(), "Menyiapkan Data", Toast.LENGTH_SHORT).show();
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user/Genset");
+                                reference.child(barang.getKey()).removeValue();
+
+                                DatabaseReference referenceUlp = FirebaseDatabase.getInstance()
+                                        .getReference("user/Ulp/"+alamatUlp+"/"+SharedPrefManager.getNamepelanggan(itemView.getContext()));
+                                String newKey  =  reference.push().getKey();
+                                Barang dataUlp = new Barang(
+                                        barang.getNama(),
+                                        barang.getDaya()
+                                        ,newKey
+                                );
+                                referenceUlp.child(newKey)
+                                        .setValue(dataUlp)
+                                        .addOnCompleteListener(task -> {
+                                            Toast.makeText(itemView.getContext(), "Data Berhasil Ditambahkan",
+                                                    Toast.LENGTH_SHORT).show();
+                                            SharedPrefManager.clearDataUlp(itemView.getContext());
+                                        });
+                            });
+                            builder.setNegativeButton("Batal", (dialog, which) -> {
+                                dialog.cancel();
+                            });
+                            AlertDialog alert = builder.create();
+                            alert.show();
+                            //
+                        }
+                        else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
+                            builder.setTitle("Genset");
+                            builder.setMessage("Anda yakin ingin menghapus : "
+                                    + barang.getNama() +" "+barang.getDaya()+"?");
+                            builder.setCancelable(false);
+                            builder.setPositiveButton("Yakin", (dialog, which) -> {
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user/Genset");
+                                reference.child(barang.getKey())
+                                        .removeValue()
+                                        .addOnCompleteListener(task ->
+                                                Toast.makeText(itemView.getContext(), "Data Deleted", Toast.LENGTH_SHORT).show()
+                                        );
+                            });
+                            builder.setNegativeButton("Batal", (dialog, which) -> {
+                                dialog.cancel();
+                            });
+                            AlertDialog alert = builder.create();
+                            alert.show();
+                        }
+                    }else {
+                        if (!SharedPrefManager.getNamepelanggan(itemView.getContext()).isEmpty()){
+                            AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
+                            builder.setTitle("Genset");
+                            builder.setMessage("Anda yakin ingin memilih : "+barang.getNama()+" "
+                                    +barang.getDaya()+"?");
+                            builder.setCancelable(false);
+                            builder.setPositiveButton("Yakin", (dialog, which) -> {
+                                Toast.makeText(itemView.getContext(), "Menyiapkan Data", Toast.LENGTH_SHORT).show();
+                                SharedPrefManager.setNamaBarang(itemView.getContext(),barang.getNama());
+                                SharedPrefManager.setDaya(itemView.getContext(),barang.getDaya());
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user/Genset");
+                                reference.child(barang.getKey()).removeValue();
+
+                                DatabaseReference referenceUlp = FirebaseDatabase.getInstance()
+                                        .getReference("user/Ulp/"+alamatUlp+"/"+SharedPrefManager.getNamepelanggan(itemView.getContext()));
+                                String newKey  =  referenceUlp.push().getKey();
+                                Barang dataUlp = new Barang(
+                                        barang.getNama(),
+                                        barang.getDaya()
+                                        ,newKey
+                                );
+                                referenceUlp.child(newKey)
+                                        .setValue(dataUlp)
+                                        .addOnCompleteListener(task -> {
+                                            Toast.makeText(itemView.getContext(),
+                                                    "Data Berhasil Dimasukkan", Toast.LENGTH_SHORT).show();
+                                            SharedPrefManager.clearDataUlp(itemView.getContext());
+                                        });
+                            });
+                            builder.setNegativeButton("Batal", (dialog, which) -> {
+                                dialog.cancel();
+                            });
+                            AlertDialog alert = builder.create();
+                            alert.show();
+                            //
+                        }
+                        else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
+                            builder.setTitle("Genset");
+                            builder.setMessage("Anda yakin ingin menghapus : "
+                                    + barang.getNama() +" "+barang.getDaya()+"?");
+                            builder.setCancelable(false);
+                            builder.setPositiveButton("Yakin", (dialog, which) -> {
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user/Genset");
+                                reference.child(barang.getKey())
+                                        .removeValue()
+                                        .addOnCompleteListener(task ->
+                                                Toast.makeText(itemView.getContext(), "Data Deleted", Toast.LENGTH_SHORT).show()
+                                        );
+                            });
+                            builder.setNegativeButton("Batal", (dialog, which) -> {
+                                dialog.cancel();
+                            });
+                            AlertDialog alert = builder.create();
+                            alert.show();
+                        }
+                    }
                 });
             }else{
                 ly.setOnClickListener(v -> Toast.makeText(itemView.getContext(),
-                        "anda adalah : "+SharedPrefManager.getRegisteredStatus(itemView.getContext())
+                        "Maaf Anda bukalah Admin : "
                         ,Toast.LENGTH_SHORT).show());
             }
         }
+//        private void changeFragment() {
+//            Navigation.findNavController(Objects.requireNonNull(itemView)).navigate(R.id.action_navigation_genset_to_navigation_ulp);
+//        }
     }
 }

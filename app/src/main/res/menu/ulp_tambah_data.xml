@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_UGB"
+        android:title="Booking UGB"
+        />
+    <item
+        android:id="@+id/action_UPS"
+        android:title="Booking UPS"
+        />
+    <item
+        android:id="@+id/action_Genset"
+        android:title="Booking Genset"
+        />
+</menu>

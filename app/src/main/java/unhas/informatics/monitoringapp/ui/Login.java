@@ -1,7 +1,10 @@
 package unhas.informatics.monitoringapp.ui;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.TextViewCompat;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,7 +26,7 @@ import unhas.informatics.monitoringapp.R;
 
 public class Login extends AppCompatActivity {
 
-    Button login;
+    TextView login;
     EditText etNama, etPass;
     ProgressBar progressBar;
     DatabaseReference reference;
@@ -34,6 +38,10 @@ public class Login extends AppCompatActivity {
         login = findViewById(R.id.btn_login);
         etNama = findViewById(R.id.etNama);
         etPass = findViewById(R.id.etPass);
+
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("");
 
         login.setOnClickListener(v -> {
             loginAccount();
@@ -64,19 +72,15 @@ public class Login extends AppCompatActivity {
                 if (dataSnapshot.exists()){
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                         NewUser user = snapshot.getValue(NewUser.class);
-                        if (user != null) {
                             if (user.getEmail().equals(email) && user.getPass().equals(password)){
-                                Toast.makeText(Login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
                                 SharedPrefManager.setRegisteredName(getBaseContext(), user.getNama());
                                 SharedPrefManager.setRegisteredStatus(getBaseContext(),user.getStatus());
                                 verify();
                             }else {
-                                Toast.makeText(Login.this, "Failes Login", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
                             }
                         }
-                    }
                 }
             }
 
@@ -105,27 +109,28 @@ public class Login extends AppCompatActivity {
         String username = etNama.getText().toString();
         String password = etPass.getText().toString();
 
-        if (TextUtils.isEmpty(username)){
-            etNama.setError("silahkan masukkan username anda");
-            view = etNama;
-            cancel = true;
-        }
+            if (TextUtils.isEmpty(username)){
+                etNama.setError("silahkan masukkan username anda");
+                view = etNama;
+                cancel = true;
+            }
 
-        if (TextUtils.isEmpty(password)){
-            etPass.setError("silahkan masukkan Password anda");
-            view = etPass;
-            cancel = true;
-        }
+            if (TextUtils.isEmpty(password)){
+                etPass.setError("silahkan masukkan Password anda");
+                view = etPass;
+                cancel = true;
+            }
 
-        if (cancel)
-            view.requestFocus();
-        else{
-            SharedPrefManager.setRegisteredUser(getBaseContext(), username);
-            SharedPrefManager.setRegisteredPass(getBaseContext(), password);
-            masuk();
-        }
+            if (cancel)
+                view.requestFocus();
+            else{
+                SharedPrefManager.setRegisteredUser(getBaseContext(), username);
+                SharedPrefManager.setRegisteredPass(getBaseContext(), password);
+                masuk();
+            }
     }
     private void masuk() {
+        Toast.makeText(Login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
         SharedPrefManager.setLoggedInUser(getBaseContext(), SharedPrefManager.getRegisteredUser(getBaseContext()));
         SharedPrefManager.setLoggedInPass(getBaseContext(), SharedPrefManager.getRegisteredPass(getBaseContext()));
         SharedPrefManager.setLoggedInStatus(getBaseContext(), true);

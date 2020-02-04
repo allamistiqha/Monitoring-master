@@ -36,9 +36,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
-        android:background="#00BCD4"
         android:layout_gravity="start"
-        app:itemTextColor="#FFFFFF"
+        android:background="#E6E6FA"
+        app:itemTextColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
@@ -50,7 +50,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#00BCD4"
+                android:background="#E6E6FA"
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
@@ -60,8 +60,8 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_gravity="center"
                     android:id="@+id/imageProfile"
-                    app:srcCompat="@drawable/schedule"
                     android:layout_width="150dp"
+                    app:srcCompat="@drawable/ic_person_black_24dp"
                     android:scaleType="fitXY"
                     android:layout_height="150dp" />
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -75,12 +75,14 @@
                         android:orientation="horizontal">
                         <androidx.appcompat.widget.AppCompatTextView
                             android:text="Name  : "
+                            android:textColor="#000"
                             android:textSize="16sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/name"
-                            android:text="Alam Pelangi Istiqha"
+                            android:textColor="#000"
+                            android:text="nama"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -90,12 +92,14 @@
                         android:orientation="horizontal">
                         <androidx.appcompat.widget.AppCompatTextView
                             android:text="Email   : "
+                            android:textColor="#000"
                             android:textSize="16sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/emali"
-                            android:text="alamistiqha@gmail.com"
+                            android:textColor="#000"
+                            android:text="email"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -105,12 +109,14 @@
                         android:orientation="horizontal">
                         <androidx.appcompat.widget.AppCompatTextView
                             android:text="Status : "
+                            android:textColor="#000"
                             android:textSize="16sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/statusUser"
                             android:text="Admin"
+                            android:textColor="#000"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -118,8 +124,10 @@
             </LinearLayout>
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/Logout"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:text="Logout"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 android:layout_marginBottom="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"

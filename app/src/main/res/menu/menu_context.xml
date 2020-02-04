@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/action_edit"
-        android:title="edit"
+        android:id="@+id/action_detail"
+        android:title="Detail Data"
         />
-
+    <item
+        android:id="@+id/action_edit"
+        android:title="Edit Data"
+        />
     <item
         android:id="@+id/action_delete"
-        android:title="delete"
+        android:title="Delete Data"
         />
     <item
         android:id="@+id/action_ugb"
-        android:title="booking ugb"
+        android:title="Booking UGB"
         />
     <item
         android:id="@+id/action_ups"
-        android:title="booking ups"
+        android:title="Booking UPS"
         />
     <item
         android:id="@+id/action_genset"
-        android:title="booking genset"
+        android:title="Booking Genset"
         />
 </menu>

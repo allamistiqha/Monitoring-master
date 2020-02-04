@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        tools:context=".ui.ulp.Ulp">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:background="#E6E6FA"
+    tools:context=".ui.ulp.UlpFragment">
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_marginBottom="20dp"
@@ -23,16 +25,25 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="Ulp Panakukang"
+                    android:text="ULP Panakukang"
                     android:textAlignment="center"
                     android:textSize="20sp"/>
                 <androidx.recyclerview.widget.RecyclerView
                     android:padding="10dp"
+                    android:visibility="visible"
                     android:id="@+id/rvPanakukang"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+                <unhas.informatics.monitoringapp.AviLoading.AVLoadingIndicatorView
+                    android:id="@+id/loadingViewPanakukang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:indicatorColor="@color/primary"
+                    android:layout_gravity="center"
+                    app:indicatorName="LineScaleIndicator" />
                 <TextView
-                    android:text="Ulp Mattoanging"
+                    android:text="ULP Mattoanging"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -46,9 +57,16 @@
                     android:layout_width="match_parent"
                     android:id="@+id/rvMattoanging"
                     android:layout_height="wrap_content"/>
-
+                <unhas.informatics.monitoringapp.AviLoading.AVLoadingIndicatorView
+                    android:id="@+id/loadingViewMattoanging"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:indicatorColor="@color/primary"
+                    android:layout_gravity="center"
+                    app:indicatorName="LineScaleIndicator" />
                 <TextView
-                    android:text="Ulp Sungguminasa"
+                    android:text="ULP Sungguminasa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -62,8 +80,16 @@
                     android:id="@+id/rvSungguminasa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+                <unhas.informatics.monitoringapp.AviLoading.AVLoadingIndicatorView
+                    android:id="@+id/loadingViewSungguminasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:indicatorColor="@color/primary"
+                    android:layout_gravity="center"
+                    app:indicatorName="LineScaleIndicator" />
                 <TextView
-                    android:text="Ulp Takalar"
+                    android:text="ULP Takalar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -77,8 +103,16 @@
                     android:id="@+id/rvTakalar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+                <unhas.informatics.monitoringapp.AviLoading.AVLoadingIndicatorView
+                    android:id="@+id/loadingViewTakalar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:indicatorColor="@color/primary"
+                    android:layout_gravity="center"
+                    app:indicatorName="LineScaleIndicator" />
                 <TextView
-                    android:text="Ulp Malino"
+                    android:text="ULP Malino"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -92,9 +126,16 @@
                     android:id="@+id/rvMalino"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
+                <unhas.informatics.monitoringapp.AviLoading.AVLoadingIndicatorView
+                    android:id="@+id/loadingViewMalino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:indicatorColor="@color/primary"
+                    android:layout_gravity="center"
+                    app:indicatorName="LineScaleIndicator" />
                 <TextView
-                    android:text="Ulp Kalebajeng"
+                    android:text="ULP Kalebajeng"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -102,12 +143,19 @@
                     android:layout_marginEnd="8dp"
                     android:textAlignment="center"
                     android:textSize="20sp"/>
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:padding="10dp"
                     android:id="@+id/rvKalebajeng"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+                <unhas.informatics.monitoringapp.AviLoading.AVLoadingIndicatorView
+                    android:id="@+id/loadingViewKaleBajeng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:indicatorColor="@color/primary"
+                    android:layout_gravity="center"
+                    app:indicatorName="LineScaleIndicator" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.core.widget.NestedScrollView>
 </androidx.appcompat.widget.LinearLayoutCompat>

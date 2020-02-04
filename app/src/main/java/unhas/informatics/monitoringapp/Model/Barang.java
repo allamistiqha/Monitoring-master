@@ -1,20 +1,8 @@
 package unhas.informatics.monitoringapp.Model;
-
-import com.google.firebase.database.Exclude;
-
 import java.io.Serializable;
 
 public class Barang implements Serializable {
-    private String nama;
-    private String daya;
-    private String key;
-
-    public Barang(String nama, String daya) {
-        this.nama = nama;
-        this.daya = daya;
-    }
-
-    public Barang() {
+    public Barang(){
     }
     public String getNama() {
         return nama;
@@ -32,13 +20,21 @@ public class Barang implements Serializable {
         this.daya = daya;
     }
 
-    @Exclude
     public String getKey() {
         return key;
     }
 
-    @Exclude
     public void setKey(String key) {
+        this.key = key;
+    }
+
+    private String nama;
+    private String daya;
+    private String key;
+
+    public Barang(String nama, String daya, String key) {
+        this.nama = nama;
+        this.daya = daya;
         this.key = key;
     }
 }

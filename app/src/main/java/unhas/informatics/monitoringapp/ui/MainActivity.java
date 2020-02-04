@@ -8,6 +8,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     NavController navController;
     AppBarConfiguration appBarConfiguration;
     TextView nama, email, status,Logout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         nama.setText(SharedPrefManager.getRegisteredName(this));
         email.setText(SharedPrefManager.getLoggedInUser(this));
         status.setText(SharedPrefManager.getRegisteredStatus(this));
-        Glide.with(this).load(R.drawable.schedule)
+        Glide.with(this).load(R.drawable.ic_person_black_24dp)
                 .circleCrop()
                 .into(imageProfill);
         BottomNavigationView navView = findViewById(R.id.nav_view);

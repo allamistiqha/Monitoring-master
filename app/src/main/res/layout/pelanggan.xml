@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/lyPelanggan"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -9,113 +10,172 @@
         android:layout_margin="5dp"
         android:elevation="10dp"
         android:layout_width="match_parent"
-        android:layout_height="220dp">
+        android:layout_height="wrap_content">
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:padding="10dp"
+            android:orientation="horizontal"
+            android:background="#E6E6FA"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="100dp">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="55dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/ic_event"
+                android:layout_height="55dp"/>
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:textSize="18sp"
-                    android:layout_marginRight="5dp"
-                    android:text="Nama Pelanggan   : "
-                    android:layout_height="wrap_content"/>
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:id="@+id/nama"
-                    android:textSize="18sp"
-                    android:layout_height="wrap_content"/>
-            </androidx.appcompat.widget.LinearLayoutCompat>
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:textSize="18sp"
-                    android:layout_marginRight="5dp"
-                    android:text="Tgl.Pemakaian       : "
-                    android:layout_height="wrap_content"/>
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:id="@+id/tglPemakaian"
-                    android:textSize="18sp"
-                    android:layout_height="wrap_content"/>
-            </androidx.appcompat.widget.LinearLayoutCompat>
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:textSize="18sp"
-                    android:layout_marginRight="5dp"
-                    android:text="Status Pelanggan  : "
-                    android:layout_height="wrap_content"/>
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:id="@+id/statusPelanggan"
-                    android:textSize="18sp"
-                    android:layout_height="wrap_content"/>
-            </androidx.appcompat.widget.LinearLayoutCompat>
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:textSize="18sp"
-                    android:layout_marginRight="5dp"
-                    android:text="Barang                    : "
-                    android:layout_height="wrap_content"/>
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:id="@+id/barang"
-                    android:textSize="18sp"
-                    android:layout_height="wrap_content"/>
-            </androidx.appcompat.widget.LinearLayoutCompat>
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:textSize="18sp"
-                    android:layout_marginRight="5dp"
-                    android:text="Lokasi                     : "
-                    android:layout_height="wrap_content"/>
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:id="@+id/lokasi"
-                    android:textSize="18sp"
-                    android:focusable="false"
-                    android:layout_height="wrap_content"/>
-            </androidx.appcompat.widget.LinearLayoutCompat>
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:textSize="18sp"
-                    android:layout_marginRight="5dp"
-                    android:text="Nomor Hp               : "
-                    android:layout_height="wrap_content"/>
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:id="@+id/phone"
-                    android:textSize="18sp"
-                    android:layout_height="wrap_content"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/Event"
+                        android:text="Event"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/nama"
+                        android:text="Nama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/statusPelanggan"
+                        android:text="Status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:text="tanggal"
+                        android:id="@+id/tglPemakaian"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:text="-"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tglBerakhir"
+                        android:text="Berakhir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:text="Tgl.Berakhir            : "
+                                    android:textSize="18sp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:visibility="gone"
+                                android:orientation="horizontal">
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:text="Daya                         : "
+                                    android:textSize="18sp" />
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/barang"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:visibility="gone"
+                                android:orientation="horizontal">
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:text="ULP                           : "
+                                    android:textSize="18sp" />
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/ulp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:visibility="gone"
+                                android:orientation="horizontal">
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:text="Lokasi                      : "
+                                    android:textSize="18sp" />
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/lokasi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false"
+                                    android:textSize="18sp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:visibility="gone"
+                                android:orientation="horizontal">
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:text="Nomor Hp               : "
+                                    android:textSize="18sp" />
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/phone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
