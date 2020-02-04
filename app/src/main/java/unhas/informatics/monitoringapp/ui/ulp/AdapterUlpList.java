@@ -58,7 +58,7 @@ public class AdapterUlpList extends RecyclerView.Adapter<AdapterUlpList.BindUlp>
     }
 
     class BindUlp extends RecyclerView.ViewHolder {
-        TextView nama, tanggal, status;
+        TextView nama, tanggal, status, daya;
         Button delete, tambah;
         RecyclerView rvChild;
 
@@ -70,12 +70,14 @@ public class AdapterUlpList extends RecyclerView.Adapter<AdapterUlpList.BindUlp>
             nama = itemView.findViewById(R.id.namaUlp);
             tanggal = itemView.findViewById(R.id.tglPemakaianUlp);
             status = itemView.findViewById(R.id.statusPelangganUlp);
+            daya = itemView.findViewById(R.id.dayah);
             delete = itemView.findViewById(R.id.delete);
             tambah =  itemView.findViewById(R.id.tambahBarang);
 
             nama.setText(ulp.getEvent());
             tanggal.setText(ulp.getTanggal());
             status.setText(ulp.getStatus());
+            daya.setText(ulp.getDaya());
 
             List<UlpPelanggan> ulpPelanggan = new ArrayList<>();
             AdapterUlpListDalam adapterUlpListDalam = new AdapterUlpListDalam(ulpPelanggan);

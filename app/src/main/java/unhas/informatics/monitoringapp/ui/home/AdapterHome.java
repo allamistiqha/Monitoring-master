@@ -127,10 +127,11 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.BindHome> impl
                 });
             }else{
                 ly.setOnClickListener(v -> {
-                    PopupMenu popup = new PopupMenu(v.getContext(), v);
-                    popup.getMenuInflater().inflate(R.menu.menu_context_user, popup.getMenu());
-                    popup.setOnMenuItemClickListener(this);
-                    popup.show();
+                    dialogFormDetail();
+//                    PopupMenu popup = new PopupMenu(v.getContext(), v);
+//                    popup.getMenuInflater().inflate(R.menu.menu_context_user, popup.getMenu());
+//                    popup.setOnMenuItemClickListener(this);
+//                    popup.show();
                 });
             }
         }
@@ -146,10 +147,10 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.BindHome> impl
         public boolean onMenuItemClick(MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.action_detail:
-                    DialogFormDetail();
+                    dialogFormDetail();
                     break;
                 case R.id.action_edit:
-                    DialogForm();
+                    dialogForm();
                     break;
                 case R.id.action_delete:
                     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("user/Data_peminjam");
@@ -184,7 +185,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.BindHome> impl
             return false;
         }
 
-        private void DialogFormDetail() {
+        private void dialogFormDetail() {
             dialog = new AlertDialog.Builder(context);
             inflater = ((Activity)context).getLayoutInflater();
             dialogView = inflater.inflate(R.layout.data_detail, null);
@@ -219,7 +220,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.BindHome> impl
         EditText txt_nama , txt_phone,txt_event, txt_ulp,txt_status, txt_daya, txt_lokasi,txt_tanggal,txt_tanggalAkhir;
         String namaa, daya, phonee, tanggall,ulpp,lokasii,statuss, tangglAkhirr, eventt;
 
-        private void DialogForm()  {
+        private void dialogForm()  {
             dialog = new AlertDialog.Builder(context);
             inflater = ((Activity)context).getLayoutInflater();
             dialogView = inflater.inflate(R.layout.data_pelanggan, null);
